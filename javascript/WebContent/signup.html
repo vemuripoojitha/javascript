@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>Java Script Events</title>
+<style type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("office.jpg");
+
+  min-height: 650px;
+ 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+   margin-top:8%;
+  margin-left:37%;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+</style>
+<script type="text/javascript">
+function validate()
+{
+ var a = document.form.fname.value;
+ var b = document.form.pwd.value;
+if(a=="")
+ {
+   alert("Fullname filed should not be empty!!!");
+   document.form.fname.focus();
+   return false;
+ }
+ if(a.length<5)
+ {
+   alert("Fullname should be more than or equal to 5 characters!!!");
+   document.form.fname.focus();
+   return false;
+ }
+  if(b.length==0)
+ {
+   alert("Password filed should not be empty!!!");
+   document.form.pwd.focus();
+   return false;
+ }
+ if(b.length<5)
+ {
+   alert("Password should be more than or equal to 5 characters!!!");
+   document.form.pwd.focus();
+   return false;
+ }
+}
+function validateuname()
+{
+ var a = document.getElementById("uname").value;
+ if(a.length==0)
+ {
+   document.getElementById("err1").innerHTML = "Please Enter Username";
+ document.getElementById("err1").style.color="blue";
+ document.getElementById("err1").style.fontSize=20;
+
+ }
+ else
+ {
+  document.getElementById("err1").innerHTML = "";
+document.form.fname.focus();
+ }
+}
+function validatepwd()
+{
+ var b = document.getElementById("pwd").value;
+ if(b.length==0)
+ {
+   document.getElementById("err2").innerHTML = "Please Enter password";
+ document.getElementById("err2").style.color="blue";
+ document.getElementById("err2").style.fontSize=20;
+
+ }
+ else
+ {
+  document.getElementById("err2").innerHTML = "";
+document.form.pwd.focus();
+ }
+}
+</script>
+</head>
+<body>
+<div class="bg-img">
+<br>
+<form name="form" action="successs.html" method="post"  onsubmit="return validate()" class="container">
+<h1>Signup</h1>
+    <label for="User Name"><b>User Name</b></label>
+
+<input type="text" name="fname" id="uname" placeholder="Enter Username" onchange="validateuname()"><span id="err1"></span>
+ <label for="psw"><b>Password</b></label>
+<input type="password" name="pwd" id="pwd" placeholder="Enter Password" onchange="validatepwd()"><span id="err2"></span>
+<button type="submit" value="reset" name="reset" class="btn">Login</button>
+&nbsp;
+<center>go back to <a href="skilling project.html">home</a></center>
+</form>
+</div>
+
+</body> 
+</html>
